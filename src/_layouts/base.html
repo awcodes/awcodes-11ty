@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ title + " | aw.codes" if title else "aw.codes" }}</title>
+    {% if description %}
+    <meta name="description" content="{{ description }}" />
+    {% endif %}
+    <meta name="robots" content="{% if robots %}{{ robots }}{% else %}index,follow{% endif %}" />
     <link rel="stylesheet" href="{{ '/css/style.css' | url }}" />
   </head>
 
@@ -39,5 +43,14 @@
         <p>&copy; {{ helpers.currentYear() }}. All the rights are belonging to me.</p>
       </footer>
     </div>
+
+    <script>
+      document.querySelectorAll('.card').forEach((card) => {
+        card.addEventListener('click', function(event) {
+          let link = event.currentTarget.querySelectorAll('a')[0];
+          window.location.href = link.href;
+        })
+      })
+    </script>
   </body>
 </html>

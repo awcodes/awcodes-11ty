@@ -7,10 +7,15 @@ module.exports = function (config) {
 
   config.addPassthroughCopy({ "./src/_public": "/" });
 
-  config.addNunjucksFilter("limit", (arr, limit) => arr.slice(0, limit));
+  config.addFilter("limit", (arr, limit) => arr.slice(0, limit));
 
   config.addFilter("postDate", (dateObj) => {
     return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED);
+  });
+
+  config.addFilter("sortByOrder", (values) => {
+    let vals = [...values]; // this *seems* to prevent collection mutation...
+    return vals.sort((a, b) => Math.sign(a.data.order - b.data.order));
   });
 
   return {
@@ -18,6 +23,7 @@ module.exports = function (config) {
     dir: {
       input: "src",
       output: "public",
+      layouts: "_layouts",
     },
   };
 };

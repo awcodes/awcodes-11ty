@@ -1,7 +1,9 @@
+@import "mixins";
+
 .auto-grid {
   display: grid;
   grid-template-columns: repeat(var(--grid-placement, auto-fill), minmax(var(--grid-min-item-size, 17rem), 1fr));
-  gap: var(--gutter, var(--space-l));
+  gap: var(--gutter, var(--space-m));
 }
 
 .cluster {
@@ -12,11 +14,26 @@
   align-items: var(--cluster-vertical-alignment, center);
 }
 
+article.work {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gutter, var(--space-m));
+
+  @media (min-width: 960px) {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  picture {
+    @include aspect-image;
+  }
+}
+
 [role="banner"] {
   padding-block: var(--space-m);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-block-end: var(--space-m);
 
   .logo {
     color: var(--color-primary);

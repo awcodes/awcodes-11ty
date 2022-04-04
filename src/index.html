@@ -1,6 +1,7 @@
 ---
 layout: base.html
 title: Welcome to my little corner of the interwebs
+description: I'm Adam and I just so happen to develop things for the web.
 ---
 
 <section class="flow">
@@ -59,9 +60,13 @@ title: Welcome to my little corner of the interwebs
   <h2>Some of My Work</h2>
 
   <ul role="list" class="auto-grid">
-    {%- for work in collections.works | limit(6) -%}
+    {%- for work in collections.works | sortByOrder | limit(3) -%}
     <li>{% include 'work-card.html' %}</li>
     {%- endfor -%}
   </ul>
+
+  <p>
+    <a href="/work/">View all work</a>
+  </p>
 </section>
 {% endif %}

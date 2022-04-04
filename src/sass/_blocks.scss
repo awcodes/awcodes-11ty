@@ -1,5 +1,11 @@
+@import "mixins";
+
 .card {
   font-size: var(--step--1);
+
+  .card__cap {
+    @include aspect-image;
+  }
 }
 
 .pill {

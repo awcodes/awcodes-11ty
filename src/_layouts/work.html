@@ -1,0 +1,37 @@
+---
+layout: "base.html"
+---
+
+<section class="flow">
+
+  <h1>{{ title }}</h1>
+
+  <article class="work">
+
+    <section>
+      <picture>
+        <source media="(max-width: 960px)" srcset="/images/medium/{{ featured_image }}">
+        <source media="(max-width: 961px)" srcset="/images/small/{{ featured_image }}">
+        <source media="(max-width: 1024px)" srcset="/images/{{ featured_image }}">
+        <img src="/images/{{ featured_image }}" alt="screen shot of {{ title }}">
+      </picture>
+
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis vel aperiam ab facere iste possimus sequi debitis atque soluta totam qui, animi aut neque sed suscipit veniam maiores deserunt. Cupiditate.</p>
+    </section>
+
+    <aside>
+      <a href="{{ url }}" class="has-icon" target="_blank" rel="noopener nofollow">
+        {% include 'svg/globe.svg' %}
+        <span>Visit Website</span>
+      </a>
+      {% if github %}
+      <a href="{{ github }}" class="has-icon" target="_blank" rel="noopener nofollow">
+        {% include 'svg/github.svg' %}
+        <span>Source</span>
+      </a>
+      {% endif %}
+    </aside>
+
+  </article>
+
+</section>

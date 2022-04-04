@@ -1,18 +1,15 @@
 ---
 layout: base.html
-title: Work
+title: Thank You
 description: ""
-pagination:
-  data: collections.works
-  size: 10
-  alias: works
+robots: "noindex,nofollow"
 ---
 
 <section class="flow">
-  <h1>Things I've coded... <small>and sometimes designed</small></h1>
+  <h1>Work</h1>
 
-  <ul role="list" class="auto-grid">
-    {%- for work in works | sortByOrder -%}
+  <ul role="list" class="auto-grid" style="--gutter: var(--space-l)">
+    {%- for work in works -%}
     <li>{% include 'work-card.html' %}</li>
     {%- endfor -%}
   </ul>

@@ -4,8 +4,13 @@ const { DateTime } = require("luxon");
 /** @param {UserConfig} config */
 module.exports = function (config) {
   config.addWatchTarget("./src/sass/");
+  config.addWatchTarget("./src/_styles/");
+  config.addWatchTarget("./tailwind.config.js");
+
+  config.ignores.add("./src/_styles/");
 
   config.addPassthroughCopy({ "./src/_public": "/" });
+  config.addPassthroughCopy({ "./src/_includes/assets/css/style.css": "/css/style.css" });
 
   config.addNunjucksFilter("limit", (arr, limit) => arr.slice(0, limit));
 
@@ -18,6 +23,7 @@ module.exports = function (config) {
     dir: {
       input: "src",
       output: "public",
+      layouts: "_layouts",
     },
   };
 };

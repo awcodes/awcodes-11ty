@@ -7,14 +7,14 @@
     <link rel="stylesheet" href="{{ '/css/style.css' | url }}" />
   </head>
 
-  <body>
-    <div class="wrapper">
-      <header role="banner">
+  <body class="bg-gray-500 text-white-500 font-sans">
+    <div class="max-w-5xl mx-auto">
+      <header role="banner" class="flex items-center justify-between py-6">
         <a href="/">
-          <div class="logo">{% include 'svg/logo.svg' %}</div>
+          <div class="h-12 text-primary-500">{% include 'svg/logo.svg' %}</div>
         </a>
         <nav aria-label="primary">
-          <ul class="cluster" role="list">
+          <ul class="flex items-center gap-4" role="list">
             <li>
               <a href="/" aria-current="{{ 'true' if page.url == '/' else 'false' }}">Home</a>
             </li>
@@ -35,7 +35,7 @@
         </nav>
       </header>
       <main role="main">{{ content | safe }}</main>
-      <footer role="contentinfo">
+      <footer role="contentinfo" class="text-xs mt-8 lg:mt-12 pb-6">
         <p>&copy; {{ helpers.currentYear() }}. All the rights are belonging to me.</p>
       </footer>
     </div>

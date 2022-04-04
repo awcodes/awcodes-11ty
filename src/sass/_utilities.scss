@@ -2,6 +2,10 @@
   margin-block-start: var(--flow-space, 1em);
 }
 
+section:not(:first-of-type) {
+  margin-block-start: var(--space-l-xl);
+}
+
 .has-icon {
   display: flex;
   align-items: center;

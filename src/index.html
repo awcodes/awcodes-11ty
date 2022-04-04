@@ -3,33 +3,65 @@ layout: base.html
 title: Welcome to my little corner of the interwebs
 ---
 
-<div class="flow">
+<section class="flow">
   <h1>Welcome to my little corner of the interwebs.</h1>
 
   <p>I'm Adam and I just so happen to develop things for the web, but you probably know that. I can't imagine any other reason you'd be looking at my site.</p>
+</section>
 
+<section class="flow">
   <h2>Tech I use and experiment with</h2>
   <ul role="list" class="cluster" style="--gutter: var(--space-xs)">
-    <li><div class="pill">HTML</div></li>
-    <li><div class="pill">CSS</div></li>
-    <li><div class="pill">JavaScript</div></li>
-    <li><div class="pill">PHP</div></li>
-    <li><div class="pill">MySQL</div></li>
-    <li><div class="pill">Laravel</div></li>
-    <li><div class="pill">Tailwind CSS</div></li>
-    <li><div class="pill">Alpine.js</div></li>
-    <li><div class="pill">11ty</div></li>
-    <li><div class="pill">Astro</div></li>
-    <li><div class="pill">React</div></li>
-    <li><div class="pill">Vue</div></li>
-    <li><div class="pill">WordPress</div></li>
+    <li>
+      <div class="pill">HTML</div>
+    </li>
+    <li>
+      <div class="pill">CSS</div>
+    </li>
+    <li>
+      <div class="pill">JavaScript</div>
+    </li>
+    <li>
+      <div class="pill">PHP</div>
+    </li>
+    <li>
+      <div class="pill">MySQL</div>
+    </li>
+    <li>
+      <div class="pill">Laravel</div>
+    </li>
+    <li>
+      <div class="pill">Tailwind CSS</div>
+    </li>
+    <li>
+      <div class="pill">Alpine.js</div>
+    </li>
+    <li>
+      <div class="pill">11ty</div>
+    </li>
+    <li>
+      <div class="pill">Astro</div>
+    </li>
+    <li>
+      <div class="pill">React</div>
+    </li>
+    <li>
+      <div class="pill">Vue</div>
+    </li>
+    <li>
+      <div class="pill">WordPress</div>
+    </li>
   </ul>
+</section>
 
+{% if collections.works.length %}
+<section class="flow">
   <h2>Some of My Work</h2>
 
   <ul role="list" class="auto-grid">
-    {%- for work in collections.work | limit(6) -%}
+    {%- for work in collections.works | limit(6) -%}
     <li>{% include 'work-card.html' %}</li>
     {%- endfor -%}
   </ul>
-</div>
+</section>
+{% endif %}

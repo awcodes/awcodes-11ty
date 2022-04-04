@@ -10,7 +10,8 @@
     "build:eleventy": "eleventy",
     "postbuild": "postcss public/css/*.css -u autoprefixer cssnano -r --no-map",
     "start": "npm-run-all build:sass --parallel watch:*",
-    "build": "npm-run-all build:sass build:eleventy"
+    "build": "npm-run-all build:sass build:eleventy",
+    "debug": "DEBUG=Eleventy* npx @11ty/eleventy --serve"
   },
   "repository": {
     "type": "git",
@@ -31,5 +32,8 @@
   "browserslist": [
     "> 0.5%",
     "not IE 11"
-  ]
+  ],
+  "devDependencies": {
+    "luxon": "^2.3.1"
+  }
 }

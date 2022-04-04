@@ -3,12 +3,12 @@ layout: base.html
 title: Work
 description: ""
 pagination:
-  data: collections.work
-  size: 10
+  data: collections.works
+  size: 2
   alias: works
 ---
 
-<div class="flow">
+<section class="flow">
   <h1>Work</h1>
 
   <ul role="list" class="auto-grid" style="--gutter: var(--space-l)">
@@ -16,4 +16,9 @@ pagination:
     <li>{% include 'work-card.html' %}</li>
     {%- endfor -%}
   </ul>
-</div>
+</section>
+
+<section>
+  {% set paginationTitle = "Works pagination" %}
+  {% include "pagination.html" %}
+</section>

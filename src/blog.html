@@ -1,0 +1,22 @@
+---
+layout: base.html
+title: Blog
+description: ""
+pagination:
+  data: collections.posts
+  size: 10
+  alias: posts
+---
+
+<section class="flow">
+  <h1>Blog</h1>
+
+  <ul role="list" class="auto-grid" style="--gutter: var(--space-l)">
+    {%- for post in posts -%}
+    <li>{% include 'post-card.html' %}</li>
+    {%- endfor -%}
+  </ul>
+
+  {% set paginationTitle = "Blog pagination" %}
+  {% include "pagination.html" %}
+</section>

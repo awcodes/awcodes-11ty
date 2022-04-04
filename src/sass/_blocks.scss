@@ -44,3 +44,14 @@ button {
     background-color: var(--color-primary-dark);
   }
 }
+
+.pagination {
+  svg {
+    width: 1.2em;
+    height: 1.2em;
+  }
+
+  span * {
+    opacity: 0.5;
+  }
+}

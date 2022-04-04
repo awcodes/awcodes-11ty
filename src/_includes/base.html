@@ -18,9 +18,16 @@
             <li>
               <a href="/" aria-current="{{ 'true' if page.url == '/' else 'false' }}">Home</a>
             </li>
+            {% if collections.works.length %}
             <li>
               <a href="/work/" aria-current="{{ 'true' if '/work/' in page.url else 'false' }}">Work</a>
             </li>
+            {% endif %}
+            {% if collections.posts.length %}
+            <li>
+              <a href="/blog/" aria-current="{{ 'true' if '/blog/' in page.url else 'false' }}">Blog</a>
+            </li>
+            {% endif %}
             <li>
               <a href="/contact/" aria-current="{{ 'true' if '/contact/' in page.url else 'false' }}">Contact</a>
             </li>

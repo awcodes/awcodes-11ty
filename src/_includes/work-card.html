@@ -1,0 +1,20 @@
+<div class="card flow">
+  <h3 class="card__title">{{ work.data.title }}</h3>
+  <p>{{ work.data.description }}</p>
+  <div class="cluster" style="--gutter: var(--space-s)">
+    <a href="{{ work.url | url }}" class="has-icon">
+      {% include 'svg/info.svg' %}
+      <span>Info</span>
+    </a>
+    <a href="{{ work.data.url }}" class="has-icon" target="_blank" rel="noopener nofollow">
+      {% include 'svg/globe.svg' %}
+      <span>Visit Website</span>
+    </a>
+    {% if work.data.github %}
+    <a href="{{ work.data.github }}" class="has-icon" target="_blank" rel="noopener nofollow">
+      {% include 'svg/github.svg' %}
+      <span>Source</span>
+    </a>
+    {% endif %}
+  </div>
+</div>

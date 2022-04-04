@@ -1,0 +1,19 @@
+---
+layout: base.html
+title: Work
+description: ""
+pagination:
+  data: collections.work
+  size: 10
+  alias: works
+---
+
+<div class="flow">
+  <h1>Work</h1>
+
+  <ul role="list" class="auto-grid" style="--gutter: var(--space-l)">
+    {%- for work in works -%}
+    <li>{% include 'work-card.html' %}</li>
+    {%- endfor -%}
+  </ul>
+</div>

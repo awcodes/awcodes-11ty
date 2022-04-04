@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ title + " | aw.codes" if title else "aw.codes" }}</title>
+    <link rel="stylesheet" href="{{ '/css/style.css' | url }}" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header role="banner">
+        <a href="/">
+          <div class="logo">{% include 'svg/logo.svg' %}</div>
+        </a>
+        <nav aria-label="primary">
+          <ul class="cluster" role="list">
+            <li>
+              <a href="/" aria-current="{{ 'true' if page.url == '/' else 'false' }}">Home</a>
+            </li>
+            <li>
+              <a href="/work/" aria-current="{{ 'true' if '/work/' in page.url else 'false' }}">Work</a>
+            </li>
+            <li>
+              <a href="/contact/" aria-current="{{ 'true' if '/contact/' in page.url else 'false' }}">Contact</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <main role="main">{{ content | safe }}</main>
+      <footer role="contentinfo">
+        <p>&copy; {{ helpers.currentYear() }}. All the rights are belonging to me.</p>
+      </footer>
+    </div>
+  </body>
+</html>

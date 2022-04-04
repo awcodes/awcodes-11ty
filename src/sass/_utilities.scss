@@ -1,0 +1,14 @@
+.flow > * + * {
+  margin-block-start: var(--flow-space, 1em);
+}
+
+.has-icon {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+
+  svg {
+    width: 1.25em;
+    height: 1.25em;
+  }
+}
